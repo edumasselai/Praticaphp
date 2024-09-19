@@ -44,6 +44,6 @@ while($x < 5 ){
 }
 echo "-------- <br> ";
 
-/*pratica 4*/
+/*pratica  4*/
 
 ?>
