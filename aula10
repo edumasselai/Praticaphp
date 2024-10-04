@@ -1,0 +1,20 @@
+<?php
+
+try {
+    $dbconn = pg_cpnnect("host=localhost
+                            port=5432
+                            dbname=local
+                            user=postgres
+                            password=postgres");
+    if($dbconn){
+        echo "database conectando...";
+        $result = pg_query($dbconn, "SELECT COUNT(*) AS QTDABS FROM PG_TABLES")
+        while($row = pg_fetch_assoc($result)){
+            echo "<br>Result: ".$row["qtdtabs"];
+        }
+    }
+}catch (exception $e){
+    echo $e->getMessage();
+
+}
+?>
